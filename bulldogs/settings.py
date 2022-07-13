@@ -75,12 +75,25 @@ WSGI_APPLICATION = 'bulldogs.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ddnofikbhp0op3',
+        'USER': 'zeuwxddggcpjqy',
+        'PASSWORD': 'b6d128f7c55ef879f20622dfe196b93637c316d24a82a8048ea4ba3567e5a8bb',
+        'HOST': 'ec2-52-20-166-21.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
@@ -119,11 +132,9 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
-
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-#
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-# MEDIA_URL = '/media/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
