@@ -11,7 +11,7 @@ def playerRoster(request):
     players = Player.objects.all()
     search_input = request.GET.get('search-area')
     if search_input:
-        players = Player.objects.filter(first_name__icontains=search_input)
+        players = Player.objects.filter(jersey__icontains=search_input)
     else:
         players = Player.objects.all()
         search_input = ''
