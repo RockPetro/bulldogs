@@ -37,7 +37,7 @@
 				<a href="{% url 'profile' player.jersey %}" style="text-decoration: none;">
 					<div class="contact-section">
 						<li class="list__item">
-							<img src="/media/{{ player.headshot }}" height="100">
+							<img src="{{ player.headshot.url }}" width="100" >
 							<p class="contact-name">{{ player.first_name | title }} {{ player.last_name | title }}</p>
 							<p class="relationship"># {{ player.jersey | title }}</p>
 						</li>
