@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
+import dj_database_url
+import psycopg2
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'roster'
+    'roster',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -121,22 +127,25 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_URL = '/static/'  #  URL to use when referring to static files located in STATIC_ROOT.
+STATIC_URL = 'static/'  #  URL to use when referring to static files located in STATIC_ROOT.
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'roster/static/'),)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hprszcum2',
+    'API_KEY': '459975972562176',
+    'API_SECRET': 'IuY-dDdWrlX8eCTqp9vV2OdZBLo',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 

@@ -12,24 +12,23 @@
 	<script src="https://kit.fontawesome.com/6b20b1c14d.js" crossorigin="anonymous"></script>
 
 	<title>Roster</title>
+
 </head>
 
 <body>
 	<div class="container">
-
 		<header class="header">
 			<form action="/" method="GET" class="search-bar" id='search-form'>
-
 				<input type="search-name" class="contact-search" name="search-area" placeholder="Search"
 					value={{search_input}}>
-
 				<i onclick="document.getElementById('search-form').submit();" style="padding-left: 5px;"
 					class="fas fa-search"></i>
-
 			</form>
 		</header>
 
 		<h1 class="contact-name" >Broomfield Blitz Bulldogs {% static 'style.css' %} </h1>
+		<img src="{% static 'roster/logo1.png' %}" height="200">
+<!--		<img src="https://yt3.ggpht.com/yti/AJo0G0lObRmYTZ287gbwGBIwm-gTaSmcQffMM_u9zg0r=s88-c-k-c0x00ffffff-no-rj-mo" height="200">-->
 
 		<section class="contacts-library">
 			<ul class="contacts-list">
